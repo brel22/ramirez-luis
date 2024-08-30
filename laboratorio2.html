@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Laboratorio2 JavaScript</title>
+</head>
+<body>
+    <!-- 1. Qué es JavaScript -->
+    <p id="js-info"></p>
+    
+    <!-- 2. Operaciones aritméticas -->
+    <p id="aritmetica"></p>
+    
+    <!-- 3. Concatenación de variables -->
+    <p id="concatenacion"></p>
+    
+    <!-- 4. Tipo de dato de constantes -->
+    <p id="tipos-dato"></p>
+    
+    <!-- 5. Mostrar objeto -->
+    <p id="objeto-info"></p>
+    
+    <!-- 6. Mostrar resultado de la función de suma de múltiplos -->
+    <p id="suma-multiplos"></p>
+
+    <script>
+        // 1. Respuesta sobre qué es JavaScript
+        document.getElementById("js-info").innerText = 
+        "JavaScript es un lenguaje de programación que se utiliza principalmente para crear contenido web interactivo. " +
+        "A diferencia de Java, que es un lenguaje de programación de propósito general, JavaScript es un lenguaje interpretado y no requiere compilación. " +
+        "Ambos comparten una sintaxis similar en ciertos aspectos, pero son lenguajes completamente diferentes.";
+
+        // 2. Operaciones aritméticas con "var"
+        var a = 10;
+        var b = 5;
+        var resultadoAritmetica = 
+            "Suma: " + (a + b) + "\n" +
+            "Resta: " + (a - b) + "\n" +
+            "Multiplicación: " + (a * b) + "\n" +
+            "División: " + (a / b);
+        document.getElementById("aritmetica").innerText = resultadoAritmetica;
+
+        // 3. Concatenación con "let"
+        let nombre = "Juan";
+        let apellido = "Pérez";
+        document.getElementById("concatenacion").innerText = "Concatenación: " + nombre + " " + apellido;
+
+        // 4. Verificar tipo de dato con "const"
+        const pi = 3.1416;
+        const saludo = "Hola";
+        var tiposDato = 
+            "Tipo de dato de 'pi': " + typeof pi + "\n" +
+            "Tipo de dato de 'saludo': " + typeof saludo;
+        document.getElementById("tipos-dato").innerText = tiposDato;
+
+        // 5. Objeto con diferentes tipos de datos
+        const objeto = {
+            numero: 42,
+            texto: "Hola Mundo",
+            booleano: true,
+            objetoVacio: {}
+        };
+        document.getElementById("objeto-info").innerText = 
+            "Objeto: " + JSON.stringify(objeto, null, 2);
+
+        // 6. Función que suma múltiplos de 3 o 5
+        function sumaMultiplos(numero) {
+            let suma = 0;
+            for (let i = 1; i < numero; i++) {
+                if (i % 3 === 0 || i % 5 === 0) {
+                    suma += i;
+                }
+            }
+            return suma;
+        }
+        document.getElementById("suma-multiplos").innerText = 
+            "Suma de múltiplos de 3 o 5 menores que 20: " + sumaMultiplos(20);
+    </script>
+</body>
+</html>
